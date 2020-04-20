@@ -1,25 +1,36 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import AppBaari from './components/AppBaari';
+import Customerlist from './components/Customerlist';
+import Traininglist from './components/Traininglist';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { CssBaseline, MuiThemeProvider, createMuiTheme } from '@material-ui/core';
+import {amber, lightBlue, brown} from '@material-ui/core/colors';
+
+
+const theme = createMuiTheme({
+  palette: { primary: {main: lightBlue[500], contrastText: '#FFFFFF'},
+  secondary: {main: amber[300], contrastText: lightBlue[50]},
+  text: {primary: brown[800], secondary: brown[50 ] }, 
+  },  
+  typography: {fontFamily: ['Poppins', 'Sans Serif']}
+});
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <BrowserRouter>
+    <MuiThemeProvider theme= { theme }>
+    <div>
+      <CssBaseline/>
+      <AppBaari />
+        <Switch>
+        <Route path ='/treenilista' component={Traininglist} />
+        <Route path='/asiakaslista' component={Customerlist} />
+      </Switch>
     </div>
+  </MuiThemeProvider>
+  </BrowserRouter>
   );
 }
 
