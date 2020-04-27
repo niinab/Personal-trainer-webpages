@@ -7,7 +7,7 @@ function Start() {
     <div className="App">
       <header className="App-header">
         <h1>Welcome to personal trainer page!</h1>
-          <img src={startingpage_pic} width={800} height={1000} mode='fit'></img>
+          <img src={startingpage_pic} alt= "aloituskuva" width={800} height={1000} mode='fit'></img>
           
         
         

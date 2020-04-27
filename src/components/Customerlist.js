@@ -23,7 +23,7 @@ import 'react-table-v6/react-table.css';
 export default function Customerlist() {
 
     const [customers, setCustomers] = React.useState([]);
-    const [open, setOpen] = React.useState(false);
+    // const [open, setOpen] = React.useState(false);
 
     React.useEffect(()=> {
         getCustomers();
@@ -36,12 +36,12 @@ export default function Customerlist() {
         .catch(err => console.error(err))
     }
 
-    const getCustomById = () => {
-        fetch('https://customerrest.herokuapp.com/api/customers/{id}')
-        .then(response => response.json())
-        .then(data => setCustomers(data.content))
-        .catch(err => console.error(err))
-    }
+    // const getCustomById = () => {
+    //     fetch('https://customerrest.herokuapp.com/api/customers/{id}')
+    //     .then(response => response.json())
+    //     .then(data => setCustomers(data.content))
+    //     .catch(err => console.error(err))
+    // }
 
     const columns = [
         {
