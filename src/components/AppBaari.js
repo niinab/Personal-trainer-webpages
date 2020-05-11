@@ -63,7 +63,7 @@ export default function SimpleTabs() {
         <Tabs value={value} onChange={handleChange} aria-label="simple tabs example">
           <Tab icon={<MenuIcon/>} label="Front page" {...a11yProps(0)} />
           <Tab icon={<CreateIcon/>} label="Customerlist" {...a11yProps(1)} />
-          <Tab icon={<CreateIcon/>} label="Traininglist" {...a11yProps(1)} />
+          <Tab icon={<CreateIcon/>} label="Traininglist" {...a11yProps(2)} />
         </Tabs>
       </AppBar>
       <AppBaari value={value} index={0}>
