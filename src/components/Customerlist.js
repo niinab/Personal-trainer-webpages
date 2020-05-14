@@ -142,7 +142,7 @@ export default function Customerlist() {
             Cell: row => (<Addtrainingtocustomer customer={row.original} addTrainingToCustom={addTrainingToCustom}/>)
         },
         {
-            accessor: 'content.rel.customer.href',
+            accessor: 'content.href',
             filterable: false,
             sortable: false,
             minWidth: 60,
