@@ -26,15 +26,8 @@ export default function Customerlist() {
         .catch(err => console.error(err))
     }
 
-    const getCustomById = () => {
-        fetch('https://customerrest.herokuapp.com/api/customers/{id}')
-        .then(response => response.json())
-        .then(data => setCustomers(data.content))
-        .catch(err => console.error(err))
-    }
-
     const addCustomer = (customer) => {
-        fetch('https://customerrest.herokuapp.com/customers',
+        fetch('https://customerrest.herokuapp.com/api/customers',
         {
             method: 'POST',
             headers: {
@@ -87,7 +80,7 @@ export default function Customerlist() {
     }
 
     const addTrainingToCustom = (link, training) => {
-        fetch('https://customerrest.herokuapp.com/trainings',
+        fetch('https://customerrest.herokuapp.com/api/trainings',
         {
             method: 'POST',
             header: {
@@ -98,7 +91,7 @@ export default function Customerlist() {
                 "date": "2018-1-1" ,    
                 "activity": "Aerobic",    
                 "duration": "45",
-                "customer" : "https://localhost:8080/api/customers/{id}"
+                "customer" : "https://localhost:8080/customers/{id}"
             }
         })
         .then(response => getTrainings())
@@ -149,7 +142,7 @@ export default function Customerlist() {
             Cell: row => (<Addtrainingtocustomer customer={row.original} addTrainingToCustom={addTrainingToCustom}/>)
         },
         {
-            accessor: 'links.self.href',
+            accessor: 'content.rel.customer.href',
             filterable: false,
             sortable: false,
             minWidth: 60,

@@ -3,6 +3,7 @@ import './App.css';
 import AppBaari from './components/AppBaari';
 import Customerlist from './components/Customerlist';
 import Traininglist from './components/Traininglist';
+import Calendar from './components/Calendar';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { CssBaseline, MuiThemeProvider, createMuiTheme } from '@material-ui/core';
 import {amber, lightBlue, brown} from '@material-ui/core/colors';

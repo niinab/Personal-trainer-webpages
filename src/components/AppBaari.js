@@ -11,6 +11,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import Traininglist from'./Traininglist';
 import Customerlist from './Customerlist';
 import Startingpage from './Startingpage';
+import Calendar from './Calendar';
 
 function AppBaari(props) {
   const { children, value, index, ...other } = props;
@@ -64,6 +65,7 @@ export default function SimpleTabs() {
           <Tab icon={<MenuIcon/>} label="Front page" {...a11yProps(0)} />
           <Tab icon={<CreateIcon/>} label="Customerlist" {...a11yProps(1)} />
           <Tab icon={<CreateIcon/>} label="Traininglist" {...a11yProps(2)} />
+          <Tab icon={<CreateIcon/>} label="Calendar" {...a11yProps(3)} />
         </Tabs>
       </AppBar>
       <AppBaari value={value} index={0}>
@@ -74,6 +76,9 @@ export default function SimpleTabs() {
       </AppBaari>
       <AppBaari value={value} index={2}>
         <Traininglist />
+      </AppBaari>
+      <AppBaari value={value} index={3}>
+        <Calendar />
       </AppBaari>
     </div>
   );

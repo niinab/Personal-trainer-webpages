@@ -36,7 +36,7 @@ export default function Traininglist() {
     }
 
         const addTraining = (training) => {
-            fetch('https://customerrest.herokuapp.com/trainings',
+            fetch('https://customerrest.herokuapp.com/api/trainings',
             {
                 method: 'POST',
                 headers: {
@@ -94,7 +94,7 @@ export default function Traininglist() {
             Cell: row => (<Edittraining training={row.original} updateTraining={updateTraining}/>)
         },
         {
-            accessor: 'links.self.href',
+            accessor: 'links.href',
             filterable: false,
             sortable: false,
             minWidth: 60,
@@ -116,7 +116,6 @@ export default function Traininglist() {
                 horizontal: 'left'
             }}
             />
-            {/* <Moment format="YYYY/MM/DD">{this.props.dateToFormat}</Moment> */}
         </div>
     );
 }
